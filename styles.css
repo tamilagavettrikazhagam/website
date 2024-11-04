@@ -172,3 +172,41 @@ section p {
         font-size: 1em;
     }
 }
+
+@media (max-width: 800px) {
+  #navbar {
+    padding: 5px 15px; 
+  }
+
+  #navbar ul {
+    gap: 5px; 
+  }
+
+  #navbar ul li {
+    padding: 4px; 
+  }
+
+  #navbar ul li a {
+    font-size: 0.9em; 
+    padding: 3px 10px; 
+  }
+}
+
+@media (max-width: 600px) {
+  #navbar {
+    padding: 5px 10px; 
+  }
+
+  #navbar ul {
+    gap: 3px; 
+  }
+
+  #navbar ul li {
+    padding: 3px; 
+  }
+
+  #navbar ul li a {
+    font-size: 0.8em; 
+    padding: 2px 8px; 
+  }
+}
