@@ -21,7 +21,7 @@ body {
 
 #navbar {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #a10000;
@@ -78,7 +78,7 @@ body {
 .hero-content {
     background-color: rgb(255, 255, 255); /* Semi-transparent overlay */
     color: #ffffff2a;
-    padding-top: 60px;
+    padding-bottom: 60px;
     text-align: center;
     background-image: url('https://i.ibb.co/g3t6jZ9/tvk-flag-vijayspeech-220824-2-1.jpg');
     background-size: cover; /* Adjust to fit the screen */
