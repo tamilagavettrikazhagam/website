@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Open-Sans, Arial, sans-serif;
     line-height: 1.6;
     background-color: #fff;
     color: #333;
+
 }
 
 #header {
@@ -79,16 +80,27 @@ body {
     color: #ffffff2a;
     padding-top: 60px;
     text-align: center;
+    background-image: url('https://i.ibb.co/g3t6jZ9/tvk-flag-vijayspeech-220824-2-1.jpg');
+    background-size: cover; /* Adjust to fit the screen */
+    background-attachment: fixed; /* This keeps the image fixed */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
 }
 
 .hero-content h1 {
     font-size: 3em;
+    font-weight: 500;
     margin: 0px 0;
-    color: #333;
+    color: #330000;
+    font-weight: 900;
+    text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
 }
 
 .hero-content p {
     font-size: 1.2em;
+    font-weight: 900;
+    color: #2a3100;
+    text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
 }
 
 section {
@@ -174,39 +186,39 @@ section p {
 }
 
 @media (max-width: 800px) {
-  #navbar {
-    padding: 5px 15px; 
+    #navbar {
+      padding: 5px 15px; 
+    }
+  
+    #navbar ul {
+      gap: 5px; 
+    }
+  
+    #navbar ul li {
+      padding: 4px; 
+    }
+  
+    #navbar ul li a {
+      font-size: 0.9em; 
+      padding: 3px 10px; 
+    }
   }
-
-  #navbar ul {
-    gap: 5px; 
+  
+  @media (max-width: 600px) {
+    #navbar {
+      padding: 5px 10px; 
+    }
+  
+    #navbar ul {
+      gap: 3px; 
+    }
+  
+    #navbar ul li {
+      padding: 3px; 
+    }
+  
+    #navbar ul li a {
+      font-size: 0.8em; 
+      padding: 2px 8px; 
+    }
   }
-
-  #navbar ul li {
-    padding: 4px; 
-  }
-
-  #navbar ul li a {
-    font-size: 0.9em; 
-    padding: 3px 10px; 
-  }
-}
-
-@media (max-width: 600px) {
-  #navbar {
-    padding: 5px 10px; 
-  }
-
-  #navbar ul {
-    gap: 3px; 
-  }
-
-  #navbar ul li {
-    padding: 3px; 
-  }
-
-  #navbar ul li a {
-    font-size: 0.8em; 
-    padding: 2px 8px; 
-  }
-}
