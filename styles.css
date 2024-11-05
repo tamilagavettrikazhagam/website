@@ -173,52 +173,94 @@ section p {
 
 /* Media queries for responsiveness */
 
+/* Media query for screens up to 800px */
 @media (max-width: 800px) {
-    /* ... existing media queries ... */
-
     .hero-content h1 {
-        font-size: 2em;
+      font-size: 2em;
     }
-
+  
     .hero-content p {
-        font-size: 1em;
+      font-size: 1em;
+    }
+  
+    #navbar {
+      padding: 5px 15px;
+    }
+  
+    #navbar ul {
+      gap: 5px;
+    }
+  
+    #navbar ul li {
+      padding: 4px;
+    }
+  
+    #navbar ul li a {
+      font-size: 0.9em;
+      padding: 3px 10px;
     }
 }
-
-@media (max-width: 800px) {
+  
+/* Media query for screens up to 600px */
+@media (max-width: 600px) {
+    .hero-content h1 {
+      font-size: 1.8em;
+    }
+  
+    .hero-content p {
+      font-size: 0.9em;
+    }
+  
     #navbar {
-      padding: 5px 15px; 
+      padding: 5px 10px;
     }
   
     #navbar ul {
-      gap: 5px; 
+      gap: 3px;
     }
   
     #navbar ul li {
-      padding: 4px; 
+      padding: 3px;
     }
   
     #navbar ul li a {
-      font-size: 0.9em; 
-      padding: 3px 10px; 
+      font-size: 0.8em;
+      padding: 2px 8px;
     }
-  }
   
-  @media (max-width: 600px) {
+    #scrollToTopBtn {
+      bottom: 70px;
+    }
+}
+  
+/* Media query for screens up to 400px */
+@media (max-width: 400px) {
+    .hero-content h1 {
+      font-size: 1.5em;
+    }
+  
+    .hero-content p {
+      font-size: 0.8em;
+    }
+  
     #navbar {
-      padding: 5px 10px; 
+      padding: 5px 5px;
     }
   
     #navbar ul {
-      gap: 3px; 
+      gap: 2px;
     }
   
     #navbar ul li {
-      padding: 3px; 
+      padding: 2px;
     }
   
     #navbar ul li a {
-      font-size: 0.8em; 
-      padding: 2px 8px; 
+      font-size: 0.7em;
+      padding: 1px 5px;
     }
-  }
+  
+    #scrollToTopBtn {
+      bottom: 60px;
+    }
+}
