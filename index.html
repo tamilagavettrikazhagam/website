@@ -4,79 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TVK - TAMILAGA VETTRI KAZHAGAM</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Navbar button elevated style on hover only */
+        .navbar-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .navbar-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
-<body>
-    <header id="header">
-        <div id="navbar">
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#news">News & Events</a></li>
-                <li><a href="#joinus">Join Us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+<body class="font-sans text-gray-800 bg-white">
+    <header id="header" class="relative text-center bg-gray-800 text-white"> 
+        <!-- Navbar with Elevated Buttons on Hover -->
+        <div id="navbar" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-700 p-2 rounded-full shadow-md z-40">
+            <ul class="flex gap-2 md:gap-4 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
+                <li><a href="#about" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">About Us</a></li>
+                <li><a href="#news" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">News & Events</a></li>
+                <li><a href="#joinus" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">Join Us</a></li>
+                <li><a href="#contact" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">Contact Us</a></li>
             </ul>
         </div>
-        <div class="hero-content">
-            <section id="hero" class="full-height">
-                <h1>TAMILAGA VETTRI KAZHAGAM</h1>
-                <p>for Secular Social Justice</p>               
+
+        <!-- Hero Section -->
+        <div class="hero-content bg-cover bg-fixed bg-center bg-no-repeat h-screen flex flex-col justify-center items-center" style="background-image: url('https://i.ibb.co/g3t6jZ9/tvk-flag-vijayspeech-220824-2-1.jpg');">
+            <section id="hero" class="text-center bg-opacity-50 px-4">
+                <h1 class="text-2xl md:text-4xl lg:text-6xl font-extrabold text-[#800000] relative text-shadow-lg" 
+                    style="text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);">
+                    TAMILAGA VETTRI KAZHAGAM
+                </h1>
+                <p class="text-base md:text-lg lg:text-2xl font-bold text-[#006400] relative text-shadow-lg" 
+                   style="text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);">
+                    for Secular Social Justice
+                </p>
             </section>
         </div>
     </header>
-    <div class="about">
-        <section id="about" class="full-height">
-            <h2>About Us</h2>
-            <p>TVK is a political party committed to social justice, economic equality, and the empowerment of the Tamil people.</p>
-            <p>Our vision is to create a Tamil Nadu where every individual has the opportunity to reach their full potential.</p>
-        </section>
-    </div>
-    <div class="news">
-        <section id="news" class="full-height">
-            <h2>News & Events</h2>
-            <p>Stay updated on the latest news and events from TVK.</p>
-        </section>
-    </div>
+    
+    <!-- About Us Section -->
+    <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">About Us</h2>
+        <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">TVK is a political party committed to social justice, economic equality, and the empowerment of the Tamil people. 
+            Our vision is to create a Tamil Nadu where every individual has the opportunity to reach their full potential.</p>
+    </section>
 
-    <div class="joinus">
-        <section id="joinus" class="full-height">
-            <h2>Join Us</h2>
-            <p>Join the movement for social change. Become a part of TVK and help us build a better future.</p>
-        </section>
-    </div>
+    <!-- News & Events Section -->
+    <section id="news" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">News & Events</h2>
+        <p class="text-sm md:text-lg text-gray-600">Stay updated on the latest news and events from TVK.</p>
+    </section>
 
-    <div class="contact">
-        <section id="contact" class="full-height">
-            <h2>Contact Us</h2>
-            <p>Get in touch with us:</p>
-            <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" >tamilagavettrikazhagamparty@gmail.com</a></p>
-            <p><a id="call" href="tel:+9112345 67890" target="_blank" >+91 12345 67890</a></p>
-            <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" >8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
-        </section>
-    </div>
+    <!-- Join Us Section -->
+    <section id="joinus" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">Join Us</h2>
+        <p class="text-sm md:text-lg text-gray-600">Join the movement for social change. Become a part of TVK and help us build a better future.</p>
+    </section>
 
-    <button id="scrollToTopBtn">↑</button>
+    <!-- Contact Us Section -->
+    <section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">Contact Us</h2>
+        <p class="text-sm md:text-lg text-gray-600 mb-3">Get in touch with us:</p>
+        <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</a></p>
+        <p><a id="call" href="tel:+911234567890" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">+91 12345 67890</a></p>
+        <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
+    </section>
 
-    <footer class="footer">
-        <p>&copy; 2024 Tamilaga Vettri Kazhagam. All rights reserved.</p>
+    <!-- Scroll to Top Button with Elevated Style -->
+    <button id="scrollToTopBtn" class="font-black fixed bottom-16 right-5 w-10 h-10 rounded-full bg-red-700 text-white font-black shadow-lg hover:bg-yellow-400 transition-transform transform hover:scale-110 hidden hover:text-red-700" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">&#8679;</button>
+
+    <footer class="bg-gray-200 text-gray-600 text-center pb-3 md:pb-0 text-xs">
+        &copy; 2024 Tamilaga Vettri Kazhagam. All rights reserved.
     </footer>
 
     <script>
         window.addEventListener('scroll', () => {
-          const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-          if (window.scrollY > 200) {
-            scrollToTopBtn.style.display = 'block';
-          } else {
-            scrollToTopBtn.style.display = 'none';
-          }
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 200) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
         });
-      
-        document.getElementById('scrollToTopBtn').addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
-      </script>
-
+    </script>
 </body>
 </html>
