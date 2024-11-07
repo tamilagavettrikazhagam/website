@@ -57,10 +57,10 @@
         <!-- Navbar with Elevated Buttons on Hover -->
         <div id="navbar" class="tracking-tight fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-700 p-2 rounded-full shadow-md z-40">
             <ul class="flex gap-2 md:gap-4 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
-                <li><a href="#about" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">About Us</a></li>
-                <li><a href="#news" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">News & Events</a></li>
-                <li><a href="#joinus" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">Join Us</a></li>
-                <li><a href="#contact" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">Contact Us</a></li>
+                <li><a href="#about" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400">About Us</a></li>
+                <li><a href="#news" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400">News & Events</a></li>
+                <li><a href="#joinus" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400">Join Us</a></li>
+                <li><a href="#contact" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400">Contact Us</a></li>
             </ul>
         </div>
 
@@ -83,31 +83,76 @@
     <!-- About Us Section -->
     <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">A New Dawn for Tamil Nadu</h2>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">A New Dawn for Tamil Nadu</h2>
             <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
                 We are a political party dedicated to the welfare and progress of the Tamil people. 
                 Founded by our thalapathy, the party is committed to addressing the pressing issues facing Tamil Nadu, including social justice, economic development, and cultural preservation.
             </p>
-            <h3 class="text-xl md:text-2xl font-semibold mt-5 mb-2">Our Vision</h3>
+
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Tamil Desiyam & Dravidam: Our Ideals</h2>
+            <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
+                Tamil Desiyam and Dravidam are the guiding principles of our party. While Tamil Desiyam fosters pride and unity among the Tamil people, Dravidam promotes social equality and justice. Together, they form the backbone of our mission, blending cultural pride with progressive values. By integrating both, we strive for a Tamil Nadu where every citizen thrives within a just and harmonious society.
+            </p>
+
+            <h3 class="text-xl md:text-2xl font-serif font-semibold mt-5 mb-2">Our Vision</h3>
             <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
                 We envision a Tamil Nadu that is prosperous, progressive, and socially just. A state where every individual, regardless of caste, creed, or religion, has equal opportunities.
             </p>
-            <h3 class="text-xl md:text-2xl font-semibold mt-5 mb-2">Our Mission</h3>
-            <ul class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3 list-disc list-inside">
-                <li><strong>Just:</strong> Ensuring equitable distribution of resources and opportunities.</li>
-                <li><strong>Equitable:</strong> Promoting social justice and eliminating discrimination.</li>
-                <li><strong>Prosperous:</strong> Driving economic growth and creating jobs.</li>
-                <li><strong>Progressive:</strong> Embracing innovation and technology.</li>
-                <li><strong>Culturally Rich:</strong> Preserving and promoting Tamil culture and heritage.</li>
-            </ul>
-            <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">We are committed to social justice, economic equality, and the empowerment of the Tamil people. 
-                Our aim is to create a Tamil Nadu where every individual has the opportunity to reach their full potential.</p>
+            <h3 class="text-xl md:text-2xl font-serif font-semibold mt-5 mb-5">Our Mission</h3>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4 mb-8">
+                <!-- Just -->
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                    Just
+                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                        Ensuring equitable distribution of resources and opportunities.
+                    </span>
+                </div>
+                
+                <!-- Equitable -->
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                    Equitable
+                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                        Promoting social justice and eliminating discrimination.
+                    </span>
+                </div>
+            
+                <!-- Prosperous -->
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                    Prosperous
+                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                        Driving economic growth and creating jobs.
+                    </span>
+                </div>
+            
+                <!-- Progressive -->
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                    Progressive
+                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                        Embracing innovation and technology.
+                    </span>
+                </div>
+            
+                <!-- Culturally Rich -->
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                    Culturally Rich
+                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                        Preserving and promoting Tamil culture and heritage.
+                    </span>
+                </div>
+            </div>         
+                   
+            
+            <p class="text-sm md:text-lg font-serif text-gray-600 mb-2 md:mb-3">"We are committed to social justice, economic equality, and the empowerment of the Tamil people. 
+                Our aim is to create a Tamil Nadu where every individual has the opportunity to reach their full potential."</p>
         </div>
     </section>
     
-    <!-- Media -->
-    <section id="media" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
-        <h2 class="font-serif text-2xl md:text-3xl font-semibold mb-5">Media</h2>
+    <!-- News & Events Section -->
+    <section id="news" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
+        <div class="max-w-6xl mx-auto mb-8">
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">News & Events</h2>
+            <p class="text-sm md:text-lg text-gray-600">Stay updated on the latest news and events from TVK.</p>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-3/4">
             <div class="aspect-w-16 aspect-h-9">
                 <iframe src="https://www.youtube.com/embed/NHM1Y_lll6o" title="Tamilaga Vettri Kazhagam: Ideology Song" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
@@ -124,29 +169,64 @@
         </div>
     </section>
     
-
-    <!-- News & Events Section -->
-    <section id="news" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">News & Events</h2>
-            <p class="text-sm md:text-lg text-gray-600">Stay updated on the latest news and events from TVK.</p>
-        </div>
-    </section>
-
     <!-- Join Us Section -->
     <section id="joinus" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10">
         <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Join the Movement</h2>
-        <p class="text-sm md:text-lg text-gray-600">Join the movement for social change. Become a part of TVK and help us build a better future.</p>
+        <p class="text-sm md:text-lg text-gray-600 md:mb-3 mb-8">Join the movement for social change. Become a part of TVK and help us build a better future. Choose your way to contribute:</p>
+
+        <div class="flex flex-col md:flex-row justify-center gap-4 mt-4">
+            <!-- Donate Button -->
+            <a href="https://tvk.family/donate" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 text-center">
+                Donate
+            </a>
+
+            <!-- Volunteer Button -->
+            <a href="https://tvk.family/volunteer" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 text-center">
+                Volunteer
+            </a>
+
+            <!-- Membership Drive Button -->
+            <a href="https://tvk.family/" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 text-center">
+                Membership
+            </a>
+        </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
-        <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Contact Us</h2>
-        <p class="text-sm md:text-lg text-gray-600 mb-3">Get in touch with us:</p>
-        <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</a></p>
-        <p><a id="call" href="tel:+911234567890" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">+91 12345 67890</a></p>
-        <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
-    </section>
+<section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
+    <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Get in touch with us:</h2>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4 mb-8">
+        
+        <!-- Phone -->
+        <a href="tel:+911234567890" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 w-auto max-w-max group">
+            <span class="text-sm md:text-base">+91 12345 67890</span>
+            <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                Call us for more details.
+            </span>
+        </a>
+
+        <!-- Address -->
+        <a href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 w-auto max-w-max group">
+            <span class="text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu</span>
+            <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                Find us on the map.
+            </span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 w-auto max-w-max group">
+            <span class="text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</span>
+            <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                Click to send us an email.
+            </span>
+        </a>
+        
+    </div>
+</section>
+
+
+
 
     <!-- Dark Mode Toggle and Scroll to Top Button -->
     <div class="fixed bottom-20 right-5 flex flex-col items-center space-y-4">
