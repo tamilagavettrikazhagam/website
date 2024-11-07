@@ -14,9 +14,46 @@
             transform: translateY(-2px);
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
+        /* Light and Dark Mode Styles */
+        body.light-mode {
+            background-color: white;
+            color: #333;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #f3f3f3;
+        }
+        .dark-mode header {
+            background-color: #1f1f1f;
+        }
+        .dark-mode .navbar-button {
+            color: #f3f3f3;
+        }
+        .dark-mode .bg-gray-100 {
+            background-color: #2a2a2a;
+        }
+        .dark-mode .text-gray-600 {
+            color: #a9a9a9;
+        }
+        .dark-mode .text-red-700 {
+            color: #red-700;
+        }
+        .dark-mode .bg-red-700 {
+            background-color: #red-700;
+        }
+        .dark-mode .hover\:bg-yellow-400:hover {
+            background-color: #f1c40f;
+        }
+        .dark-mode footer {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        .dark-mode .hero-content {
+            filter: brightness(0.6);
+        }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-white">
+<body class="font-sans text-gray-800 bg-white light-mode">
     <header id="header" class="relative text-center bg-gray-800 text-white"> 
         <!-- Navbar with Elevated Buttons on Hover -->
         <div id="navbar" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-700 p-2 rounded-full shadow-md z-40">
@@ -45,9 +82,25 @@
     
     <!-- About Us Section -->
     <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">About Us</h2>
-        <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">TVK is a political party committed to social justice, economic equality, and the empowerment of the Tamil people. 
-            Our vision is to create a Tamil Nadu where every individual has the opportunity to reach their full potential.</p>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">A New Dawn for Tamil Nadu</h2>
+        <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
+            Tamilaga Vettri Kazhagam is a political party dedicated to the welfare and progress of the Tamil people. 
+            Founded by our thalapathy, the party is committed to addressing the pressing issues facing Tamil Nadu, including social justice, economic development, and cultural preservation.
+        </p>
+        <h3 class="text-xl md:text-2xl font-semibold mt-5 mb-2">Our Vision</h3>
+        <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
+            We envision a Tamil Nadu that is prosperous, progressive, and socially just. A state where every individual, regardless of caste, creed, or religion, has equal opportunities.
+        </p>
+        <h3 class="text-xl md:text-2xl font-semibold mt-5 mb-2">Our Mission</h3>
+        <ul class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3 list-disc list-inside">
+            <li><strong>Just:</strong> Ensuring equitable distribution of resources and opportunities.</li>
+            <li><strong>Equitable:</strong> Promoting social justice and eliminating discrimination.</li>
+            <li><strong>Prosperous:</strong> Driving economic growth and creating jobs.</li>
+            <li><strong>Progressive:</strong> Embracing innovation and technology.</li>
+            <li><strong>Culturally Rich:</strong> Preserving and promoting Tamil culture and heritage.</li>
+        </ul>
+        <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">We are committed to social justice, economic equality, and the empowerment of the Tamil people. 
+            Our aim is to create a Tamil Nadu where every individual has the opportunity to reach their full potential.</p>
     </section>
 
     <!-- News & Events Section -->
@@ -71,14 +124,39 @@
         <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
     </section>
 
-    <!-- Scroll to Top Button with Elevated Style -->
-    <button id="scrollToTopBtn" class="font-black fixed bottom-16 right-5 w-10 h-10 rounded-full bg-red-700 text-white font-black shadow-lg hover:bg-yellow-400 transition-transform transform hover:scale-110 hidden hover:text-red-700" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">&#8679;</button>
+    <!-- Dark Mode Toggle and Scroll to Top Button -->
+    <div class="fixed bottom-20 right-5 flex flex-col items-center space-y-4">
+        <!-- Dark Mode Toggle -->
+        <button id="darkModeToggle" class="font-black w-10 h-10 rounded-full bg-black text-white shadow-lg hover:bg-gray-600 transition-transform transform hover:scale-110 flex items-center justify-center">
+            🌙
+        </button>
+
+        <!-- Scroll to Top Button with Elevated Style -->
+        <button id="scrollToTopBtn" class="font-black w-10 h-10 rounded-full bg-red-700 text-white shadow-lg hover:bg-yellow-400 transition-transform transform hover:scale-110 hidden hover:text-red-700" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">&#8679;</button>
+    </div>
 
     <footer class="bg-gray-200 text-gray-600 text-center pb-3 md:pb-0 text-xs">
         &copy; 2024 Tamilaga Vettri Kazhagam. All rights reserved.
     </footer>
 
     <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                darkModeToggle.innerText = '☀️'; // Change icon to sun for dark mode
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                darkModeToggle.innerText = '🌙'; // Change icon to moon for light mode
+            }
+        });
+
+        // Scroll to top button functionality
         window.addEventListener('scroll', () => {
             const scrollToTopBtn = document.getElementById('scrollToTopBtn');
             if (window.scrollY > 200) {
