@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <title>TVK - TAMILAGA VETTRI KAZHAGAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -51,10 +52,10 @@
         
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-white light-mode">
+<body class="font-sans tracking-wider text-gray-800 bg-white light-mode">
     <header id="header" class="relative text-center bg-gray-800 text-white"> 
         <!-- Navbar with Elevated Buttons on Hover -->
-        <div id="navbar" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-700 p-2 rounded-full shadow-md z-40">
+        <div id="navbar" class="tracking-tight fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-700 p-2 rounded-full shadow-md z-40">
             <ul class="flex gap-2 md:gap-4 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
                 <li><a href="#about" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">About Us</a></li>
                 <li><a href="#news" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-400 hover:text-red-700">News & Events</a></li>
@@ -64,14 +65,13 @@
         </div>
 
         <!-- Hero Section -->
-        <!-- Hero Section -->
         <div class="hero-content bg-cover bg-fixed bg-center bg-no-repeat h-screen flex flex-col justify-start items-center pt-24" style="background-image: url('https://i.ibb.co/g3t6jZ9/tvk-flag-vijayspeech-220824-2-1.jpg');">
             <section id="hero" class="text-center bg-opacity-50 px-4">
-                <h1 class="text-2xl md:text-4xl lg:text-6xl font-extrabold text-red-700 text-stroke" 
+                <h1 class="tracking-widest text-2xl md:text-4xl lg:text-6xl font-serif font-extrabold text-red-700 text-stroke" 
                     style="-webkit-text-stroke: 1px #000000;">
                     TAMILAGA VETTRI KAZHAGAM
                 </h1>
-                <p class="text-base md:text-lg lg:text-3xl font-bold text-green-900 text-stroke" 
+                <p class="tracking-widest text-base md:text-lg lg:text-3xl font-serif font-bold text-green-900 text-stroke" 
                     style="-webkit-text-stroke: 0.5px #000000;">
                     for Secular Social Justice
                 </p>
@@ -104,24 +104,44 @@
                 Our aim is to create a Tamil Nadu where every individual has the opportunity to reach their full potential.</p>
         </div>
     </section>
+    
+    <!-- Media -->
+    <section id="media" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
+        <h2 class="font-serif text-2xl md:text-3xl font-semibold mb-5">Media</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-3/4">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe src="https://www.youtube.com/embed/NHM1Y_lll6o" title="Tamilaga Vettri Kazhagam: Ideology Song" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
+            </div>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe src="https://www.youtube.com/embed/1reAZ-_i414" title="Tamilaga Vettri Kazhagam - Name Explanation" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
+            </div>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe src="https://www.youtube.com/embed/NTAPLzX_A1A" title="Tamilaga Vettri Kazhagam - Ideological Leaders" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
+            </div>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe src="https://www.youtube.com/embed/ShAS3ucUKqY" title="Tamilaga Vettri Kazhagam - Flag Explanation" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- News & Events Section -->
     <section id="news" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">News & Events</h2>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">News & Events</h2>
             <p class="text-sm md:text-lg text-gray-600">Stay updated on the latest news and events from TVK.</p>
         </div>
     </section>
 
     <!-- Join Us Section -->
     <section id="joinus" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">Join Us</h2>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Join the Movement</h2>
         <p class="text-sm md:text-lg text-gray-600">Join the movement for social change. Become a part of TVK and help us build a better future.</p>
     </section>
 
     <!-- Contact Us Section -->
     <section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-5">Contact Us</h2>
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Contact Us</h2>
         <p class="text-sm md:text-lg text-gray-600 mb-3">Get in touch with us:</p>
         <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</a></p>
         <p><a id="call" href="tel:+911234567890" target="_blank" class="text-red-700 font-bold hover:text-yellow-400 text-sm md:text-base">+91 12345 67890</a></p>
