@@ -18,11 +18,11 @@
         /* Light and Dark Mode Styles */
         body.light-mode {
             background-color: white;
-            color: #333;
+            color: rgb(166, 0, 0);
         }
         body.dark-mode {
             background-color: #121212;
-            color: #f3f3f3;
+            color: rgb(255, 30, 30);
         }
         .dark-mode header {
             background-color: #1f1f1f;
@@ -196,9 +196,9 @@
 <section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
     <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Get in touch with us:</h2>
         
-        <p><a id="call" href="tel:+911234567890" target="_blank" class="text-red-500 font-bold hover:text-yellow-500 text-sm md:text-base">+91 12345 67890</a></p>
-        <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="text-red-500 font-bold hover:text-yellow-500 text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</a></p>
-        <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="text-red-500 font-bold hover:text-yellow-500 text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
+        <p><a id="call" href="tel:+911234567890" target="_blank" class="text-green-500 font-bold hover:text-yellow-500 text-sm md:text-base">+91 12345 67890</a></p>
+        <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="text-green-500 font-bold hover:text-yellow-500 text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</a></p>
+        <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="text-green-500 font-bold hover:text-yellow-500 text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
 </section>
 
 
@@ -206,6 +206,11 @@
 
     <!-- Dark Mode Toggle and Scroll to Top Button -->
     <div class="fixed bottom-20 right-5 flex flex-col items-center space-y-4">
+        <!-- Mute Toggle Button -->
+        <button id="muteToggle" class="font-black w-10 h-10 rounded-full bg-green-500 text-white shadow-lg hover:bg-gray-600 transition-transform transform hover:scale-110 flex items-center justify-center">
+            🔊
+        </button>
+
         <!-- Dark Mode Toggle -->
         <button id="darkModeToggle" class="font-black w-10 h-10 rounded-full bg-black text-white shadow-lg hover:bg-gray-600 transition-transform transform hover:scale-110 flex items-center justify-center">
             🌙
@@ -218,6 +223,13 @@
     <footer class="bg-gray-200 text-gray-600 text-center pb-3 md:pb-0 text-xs">
         &copy; 2024 Tamilaga Vettri Kazhagam. All rights reserved.
     </footer>
+
+    <!-- Add this before the closing </body> tag -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://dqg30ah6byc0i.cloudfront.net/m8hxhl%2Ffile%2F47ad264d6f285805c59e9353b3f8f8ae_2930d73c256c554887beb3bf9648d02e.mp3?response-content-disposition=inline%3Bfilename%3D%2247ad264d6f285805c59e9353b3f8f8ae_2930d73c256c554887beb3bf9648d02e.mp3%22%3B&response-content-type=audio%2Fmpeg&Expires=1731029215&Signature=IH3-rH5VPOTweKI6DhEpa8HbTo525svs2D22F0I1Hp8KWfsl3QFiWaI7QxA5GMy30SvCVhRKqITVoMKOJNMN3DoMMZztohws3qvvb3LK35ryF7o~NndIzYpX3MwJeKsNfMOhvVF6i9sJvE255J4WJubvXctVl01bgbBC4ivzPcXc2HR0JxzeCfJSusBBSbcQcMVYt62DyyyCF9Rxm5b0ojcaF~SWl470ISwrkOzbgWhm8Xj2BQcrRa2SA~BxQzBjWBWuOTTokn-9eR6154b6JxR2aMsxQ18rS1Tsj2tsV6~-ZJyDcdpYdTXiGhUCjl42ucUZtNIco3lsfa8pe2d5ew__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
 
     <script>
         // Dark mode toggle functionality
@@ -245,6 +257,25 @@
                 scrollToTopBtn.classList.add('hidden');
             }
         });
+        
+        // Get elements
+        const muteToggle = document.getElementById('muteToggle');
+        const audio = document.getElementById('backgroundMusic');
+
+        // Start playing audio by default
+        audio.play();
+
+        // Mute toggle functionality
+        muteToggle.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false; // Unmute
+                muteToggle.innerHTML = '🔊'; // Change icon to unmuted
+            } else {
+                audio.muted = true; // Mute
+                muteToggle.innerHTML = '🔇'; // Change icon to muted
+            }
+        });
+
     </script>
 </body>
 </html>
