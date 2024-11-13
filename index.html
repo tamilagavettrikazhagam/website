@@ -6,7 +6,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <title>TVK - TAMILAGA VETTRI KAZHAGAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
+       
         /* Navbar button elevated style on hover only */
         .navbar-button {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -37,10 +40,10 @@
             color: #a9a9a9;
         }
         .dark-mode .text-red-700 {
-            color: #red-700;
+            color: #B91C1C;
         }
         .dark-mode .bg-red-700 {
-            background-color: #red-700;
+            background-color: #B91C1C;
         }
         .dark-mode .hover\:bg-yellow-400:hover {
             background-color: #f1c40f;
@@ -50,9 +53,77 @@
             color: #ffffff;
         }
         
+        /* Custom Cursor Style */
+        .theBall-outer {
+            position: fixed;
+            top: -10px;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            z-index: 9999;
+            pointer-events: none !important;
+            mix-blend-mode: exclusion; /* Optional: Inverts the colors beneath it */
+            transition: none; /* Disable transitions */
+            border-radius: 50%; /* Make it circular */
+        }
+
+        .theBall {
+            position: absolute;
+            background-color: pink; /* Cursor ball color */
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%); /* Offset the center of the ball */
+        }
+
+        /* Hide the default cursor */
+        body {
+            cursor: none; 
+        }
+        
+        /* Specifically for embedded content (e.g., YouTube videos), prevent cursor from being shown */
+        button, a, .interactive, iframe, video {
+            cursor: none !important; /* Remove the hand cursor for iframes */
+            pointer-events: auto !important; /* Allow interaction with the iframe */
+        }
+
+        /* Optional: Apply cursor to all elements */
+        * {
+            cursor: none;
+        }
+
+        /* Grain overlay layer */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background-image: radial-gradient(circle, rgb(126, 126, 126) 1px, transparent 1px);
+            background-size: 4px 4px; /* Adjust to control the grain size */
+            opacity: 0.2; /* Adjust for effect strength */
+            z-index: -1;
+            mix-blend-mode: multiply;
+        }
+
+        /* Dark mode grain overlay */
+        .dark-mode .grain-overlay {
+            opacity: 0.3; /* Adjust opacity for better visibility in dark mode */
+            background-image: radial-gradient(circle, rgb(253, 253, 253) 1px, transparent 1px); /* Slightly darker grain for better visibility */
+            mix-blend-mode: overlay; /* Use 'overlay' mode for better contrast */
+        }
+
+        /* Main content to layer above the grain */
+        .main-content {
+            position: relative;
+            z-index: 1; /* Renders above the grain overlay */
+        }
     </style>
 </head>
 <body class="font-sans tracking-wider text-gray-800 bg-white light-mode">
+    <div class="grain-overlay"></div>
+    <div class="main-content">
     <header id="header" class="relative text-center bg-gray-800 text-white"> 
         <!-- Navbar with Elevated Buttons on Hover -->
         <div id="navbar" class="tracking-tight fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-700 p-2 rounded-full shadow-md z-40">
@@ -71,8 +142,8 @@
                     style="-webkit-text-stroke: 1px #000000;">
                     TAMILAGA VETTRI KAZHAGAM
                 </h1>
-                <p class="tracking-widest text-base md:text-lg lg:text-3xl font-serif font-bold text-green-900 text-stroke" 
-                    style="-webkit-text-stroke: 0.5px #000000;">
+                <p class="pt-5 tracking-widest text-base md:text-lg lg:text-3xl font-serif font-bold text-yellow-400 text-stroke" 
+                    style="-webkit-text-stroke: 0.6px #000000;">
                     for Secular Social Justice
                 </p>
             </section>
@@ -94,52 +165,67 @@
                 Tamil Desiyam and Dravidam are the guiding principles of our party. While Tamil Desiyam fosters pride and unity among the Tamil people, Dravidam promotes social equality and justice. Together, they form the backbone of our mission, blending cultural pride with progressive values. By integrating both, we strive for a Tamil Nadu where every citizen thrives within a just and harmonious society.
             </p>
 
-            <h3 class="text-xl md:text-2xl font-serif font-semibold mt-5 mb-2">Our Vision</h3>
+            <div class="flex flex-col items-center gap-6 w-full md:w-3/4 mx-auto">
+                <div class="flex flex-col items-center">
+                    <img src="https://scontent.fixm4-4.fna.fbcdn.net/v/t1.6435-9/81559349_1081717262170685_8006121345312096256_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=TTwiFF8vJw0Q7kNvgGb0oV5&_nc_zt=23&_nc_ht=scontent.fixm4-4.fna&_nc_gid=AbSFZKb9f0lFSnU1OKSZBM3&oh=00_AYBkux9yN-qPGpAREJY8e7iwOIVNIVuADnBtncIsM9QHag&oe=675B9CBB" alt="Tamil Desiyam" class="w-full h-auto object-cover" />
+                    <p class="text-xs md:text-sm text-gray-600 mb-4">The term "Dravida" is Sanskrit and has its roots in ancient Tamil and refers to the southern regions of the Indian subcontinent, specifically associated with the Tamil kingdoms. It is believed to derive from "Damila" or "Tamila," referring to the Tamil-speaking people and their cultural sphere. In historical texts, "Dravida" was often used to denote the Tamil-speaking regions of South India, highlighting their distinct cultural, linguistic, and geographical identity.</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Dravidian_subgroups.png" alt="Dravidian Identity" class="w-full h-auto object-cover" />
+                    <p class="text-xs md:text-sm text-gray-600 mb-4">The name is not just a label but carries a deep connection to the Tamil heritage, dating back to ancient times. The term is also linked to the Dravidian language family, which includes Tamil, Telugu, Kannada, and Malayalam. The spread of these languages and cultures across South India and beyond reflects the enduring influence of the Dravidian identity in shaping the region's history and society</p>
+                </div>
+            </div>
+
+
+
+            <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Our Vision</h3>
             <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
                 We envision a Tamil Nadu that is prosperous, progressive, and socially just. A state where every individual, regardless of caste, creed, or religion, has equal opportunities.
             </p>
-            <h3 class="text-xl md:text-2xl font-serif font-semibold mt-5 mb-5">Our Mission</h3>
+            <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Our Mission</h3>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4 mb-8">
                 <!-- Just -->
-                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                     Just
-                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                    <span class="tooltip hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-48 text-center p-3 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:flex transition-opacity duration-300">
                         Ensuring equitable distribution of resources and opportunities.
                     </span>
                 </div>
                 
                 <!-- Equitable -->
-                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                     Equitable
-                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                    <span class="tooltip hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-48 text-center p-3 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:flex transition-opacity duration-300">
                         Promoting social justice and eliminating discrimination.
                     </span>
                 </div>
-            
+                
                 <!-- Prosperous -->
-                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                     Prosperous
-                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                    <span class="tooltip hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-48 text-center p-3 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:flex transition-opacity duration-300">
                         Driving economic growth and creating jobs.
                     </span>
                 </div>
-            
+                
                 <!-- Progressive -->
-                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                     Progressive
-                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                    <span class="tooltip hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-48 text-center p-3 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:flex transition-opacity duration-300">
                         Embracing innovation and technology.
                     </span>
                 </div>
-            
+                
                 <!-- Culturally Rich -->
-                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 px-4 py-2 group">
+                <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                     Culturally Rich
-                    <span class="tooltip hidden absolute bottom-full mb-2 w-48 text-center p-2 bg-white text-black shadow-lg rounded opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                    <span class="tooltip hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-48 text-center p-3 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:flex transition-opacity duration-300">
                         Preserving and promoting Tamil culture and heritage.
                     </span>
                 </div>
-            </div>         
+            </div>
+       
                    
             
             <p class="text-sm md:text-lg font-serif text-gray-600 mb-2 md:mb-3">"We are committed to social justice, economic equality, and the empowerment of the Tamil people. 
@@ -154,16 +240,16 @@
             <p class="text-sm md:text-lg text-gray-600">Stay updated on the latest news and events from TVK.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-3/4">
-            <div class="aspect-w-16 aspect-h-9">
+            <div class="aspect-video">
                 <iframe src="https://www.youtube.com/embed/NHM1Y_lll6o" title="Tamilaga Vettri Kazhagam: Ideology Song" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
             </div>
-            <div class="aspect-w-16 aspect-h-9">
+            <div class="aspect-video">
                 <iframe src="https://www.youtube.com/embed/1reAZ-_i414" title="Tamilaga Vettri Kazhagam - Name Explanation" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
             </div>
-            <div class="aspect-w-16 aspect-h-9">
+            <div class="aspect-video">
                 <iframe src="https://www.youtube.com/embed/NTAPLzX_A1A" title="Tamilaga Vettri Kazhagam - Ideological Leaders" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
             </div>
-            <div class="aspect-w-16 aspect-h-9">
+            <div class="aspect-video">
                 <iframe src="https://www.youtube.com/embed/ShAS3ucUKqY" title="Tamilaga Vettri Kazhagam - Flag Explanation" class="w-full h-full rounded-lg shadow-md" allowfullscreen></iframe>
             </div>
         </div>
@@ -174,34 +260,36 @@
         <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Join the Movement</h2>
         <p class="text-sm md:text-lg text-gray-600 md:mb-3 mb-8">Join the movement for social change. Become a part of TVK and help us build a better future. Choose your way to contribute:</p>
 
-        <div class="flex flex-col md:flex-row justify-center gap-4 mt-4">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4 mb-8">
             <!-- Donate Button -->
-            <a href="https://tvk.family/donate" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 text-center">
+            <a href="https://tvk.family/donate" class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                 Donate
             </a>
 
             <!-- Volunteer Button -->
-            <a href="https://tvk.family/volunteer" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 text-center">
+            <a href="https://tvk.family/volunteer" class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                 Volunteer
             </a>
 
             <!-- Membership Drive Button -->
-            <a href="https://tvk.family/" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300 text-center">
+            <a href="https://tvk.family/" class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
                 Membership
             </a>
         </div>
     </section>
 
     <!-- Contact Us Section -->
-<section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100">
-    <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Get in touch with us:</h2>
-        
-        <p><a id="call" href="tel:+911234567890" target="_blank" class="text-green-500 font-bold hover:text-yellow-500 text-sm md:text-base">+91 12345 67890</a></p>
-        <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="text-green-500 font-bold hover:text-yellow-500 text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</a></p>
-        <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="text-green-500 font-bold hover:text-yellow-500 text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
-</section>
+    <section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-3 py-10 bg-gray-100 ">
+        <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Get in touch with us:</h2>
+            <p><a id="call" href="tel:+911234567890" target="_blank" class="text-gray-600 font-bold hover:text-yellow-500 text-sm md:text-base">+91 12345 67890</a></p>
+            <p><a id="mail" href="mailto:tamilagavettrikazhagamparty@gmail.com" target="_blank" class="text-gray-600 font-bold hover:text-yellow-500 text-sm md:text-base">tamilagavettrikazhagamparty@gmail.com</a></p>
+            <p><a id="address" href="https://maps.app.goo.gl/FitFGcMhJRCtNP666" target="_blank" class="text-gray-600 font-bold hover:text-yellow-500 text-sm md:text-base">8th Ave, Panaiyur, Chennai, Tamil Nadu 600119</a></p>
+    </section>
 
-
+    <!-- Cursor Section -->
+    <div class="theBall-outer">
+        <div class="theBall"></div>
+      </div>
 
 
     <!-- Dark Mode Toggle and Scroll to Top Button -->
@@ -224,9 +312,11 @@
         &copy; 2024 Tamilaga Vettri Kazhagam. All rights reserved.
     </footer>
 
+    </div>
+
     <!-- Add this before the closing </body> tag -->
     <audio id="backgroundMusic" loop>
-        <source src="https://dqg30ah6byc0i.cloudfront.net/m8hxhl%2Ffile%2F47ad264d6f285805c59e9353b3f8f8ae_2930d73c256c554887beb3bf9648d02e.mp3?response-content-disposition=inline%3Bfilename%3D%2247ad264d6f285805c59e9353b3f8f8ae_2930d73c256c554887beb3bf9648d02e.mp3%22%3B&response-content-type=audio%2Fmpeg&Expires=1731029215&Signature=IH3-rH5VPOTweKI6DhEpa8HbTo525svs2D22F0I1Hp8KWfsl3QFiWaI7QxA5GMy30SvCVhRKqITVoMKOJNMN3DoMMZztohws3qvvb3LK35ryF7o~NndIzYpX3MwJeKsNfMOhvVF6i9sJvE255J4WJubvXctVl01bgbBC4ivzPcXc2HR0JxzeCfJSusBBSbcQcMVYt62DyyyCF9Rxm5b0ojcaF~SWl470ISwrkOzbgWhm8Xj2BQcrRa2SA~BxQzBjWBWuOTTokn-9eR6154b6JxR2aMsxQ18rS1Tsj2tsV6~-ZJyDcdpYdTXiGhUCjl42ucUZtNIco3lsfa8pe2d5ew__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ" type="audio/mp3">
+        <source src="https://uc8ae9cb77da6a5fbcb2b1d456b0.dl.dropboxusercontent.com/cd/0/inline/CeRx6BcnIJGz1A18iA3J_XN6bEPsHz6qwDd69zrMZcnRMBXnRmvA96TKX9rdUD524TO-yQkQW_FyVMJepl5zuhduu6CuuT59Wm3pBaABB2yXSOIX_xYuW-3rmh321k2uC0T5im71arXVxbgdIRQXCzyD/file#" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -235,7 +325,7 @@
         // Dark mode toggle functionality
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
-
+    
         darkModeToggle.addEventListener('click', () => {
             if (body.classList.contains('light-mode')) {
                 body.classList.remove('light-mode');
@@ -247,7 +337,7 @@
                 darkModeToggle.innerText = '🌙'; // Change icon to moon for light mode
             }
         });
-
+    
         // Scroll to top button functionality
         window.addEventListener('scroll', () => {
             const scrollToTopBtn = document.getElementById('scrollToTopBtn');
@@ -261,10 +351,10 @@
         // Get elements
         const muteToggle = document.getElementById('muteToggle');
         const audio = document.getElementById('backgroundMusic');
-
+    
         // Start playing audio by default
         audio.play();
-
+    
         // Mute toggle functionality
         muteToggle.addEventListener('click', () => {
             if (audio.muted) {
@@ -275,7 +365,25 @@
                 muteToggle.innerHTML = '🔇'; // Change icon to muted
             }
         });
-
+    
+        // Custom Cursor Functionality
+        // Function to update cursor position on mousemove
+        $(function () {
+            var prefix = function () {
+                var a = window.getComputedStyle(document.documentElement, ""),
+                    b = (Array.prototype.slice.call(a).join("").match(/-(moz|webkit|ms)-/) || "" === a.OLink && ["", "o"])[1];
+                return "WebKit|Moz|MS|O".match(new RegExp("(" + b + ")", "i"))[1], "-" + b + "-"
+            }();
+    
+            $(document).mousemove(function (e) {
+                let mouseX = e.pageX + 15;
+                let mouseY = e.pageY - $(window).scrollTop() + 15;
+                $('.theBall-outer').attr('style', prefix + 'transform:translate(' + mouseX + 'px,' + mouseY + 'px)');
+            });
+        });
+    
+        
     </script>
 </body>
 </html>
+
