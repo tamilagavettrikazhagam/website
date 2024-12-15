@@ -119,36 +119,53 @@
             position: relative;
             z-index: 1; /* Renders above the grain overlay */
         }
+
     </style>
 </head>
 <body class="font-sans tracking-wider text-gray-800 bg-white light-mode">
     <div class="grain-overlay"></div>
+    
     <div class="main-content">
     <header id="header" class="relative text-center bg-gray-800 text-white"> 
         <!-- Navbar with Elevated Buttons on Hover -->
         <div id="navbar" class="tracking-tight fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-700 p-2 rounded-full shadow-md z-40">
             <ul class="flex gap-2 md:gap-4 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
-                <li><a href="#about" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500">About Us</a></li>
-                <li><a href="#news" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500">News & Events</a></li>
-                <li><a href="#joinus" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500">Join Us</a></li>
-                <li><a href="#contact" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500">Contact Us</a></li>
+                <li><a href="#about" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500 hover:text-gray-600">About Us</a></li>
+                <li><a href="#news" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500 hover:text-gray-600">News & Events</a></li>
+                <li><a href="#joinus" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500 hover:text-gray-600">Join Us</a></li>
+                <li><a href="#contact" class="navbar-button text-white px-2 sm:px-3 md:px-4 py-1 rounded-full hover:bg-yellow-500 hover:text-gray-600">Contact Us</a></li>
             </ul>
         </div>
 
+        
+
         <!-- Hero Section -->
         <div class="hero-content bg-cover bg-fixed bg-center bg-no-repeat h-screen flex flex-col justify-start items-center pt-24" style="background-image: url('https://i.ibb.co/g3t6jZ9/tvk-flag-vijayspeech-220824-2-1.jpg');">
-            <section id="hero" class="text-center bg-opacity-50 px-4">
-                <h1 class="tracking-widest text-2xl md:text-4xl lg:text-6xl font-serif font-extrabold text-red-700 text-stroke" 
-                    style="-webkit-text-stroke: 1px #000000;">
+            
+            <!-- Design Element Header -->
+        
+        <div id="scrolling-design" class="w-full bg-yellow-400 absolute top-0 left-0">
+            
+            <!-- Additional Red Line if needed -->
+            <div class="w-full bg-red-700 h-6"></div>
+            
+            <!-- Main Header Content -->
+            <div class="container mx-auto py-2 text-center text-gray-600">
+                <h1 class="tracking-widest text-xl md:text-2xl lg:text-4xl font-serif font-extrabold text-stroke" 
+                style="-webkit-text-stroke: 1px rgb(0, 100, 0);">
                     TAMILAGA VETTRI KAZHAGAM
                 </h1>
-                <p class="pt-5 tracking-widest text-base md:text-lg lg:text-3xl font-serif font-bold text-yellow-400 text-stroke" 
-                    style="-webkit-text-stroke: 0.6px #000000;">
-                    for Secular Social Justice
+                <p class="pt-2 tracking-widest text-sm md:text-base lg:text-xl font-serif font-bold text-stroke" 
+                style="-webkit-text-stroke: 0.5px rgb(0, 100, 0);">
+                    for Secular Social Justices
                 </p>
-            </section>
+            </div>            
+        
+            <div class="w-full bg-red-700 h-6"></div>
+        </div>
         </div>
         
+                 LJ 
     </header>
     
     <!-- About Us Section -->
@@ -160,7 +177,7 @@
                 Founded by our thalapathy, the party is committed to addressing the pressing issues facing Tamil Nadu, including social justice, economic development, and cultural preservation.
             </p>
 
-            <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Tamil Desiyam & Dravidam: Our Ideals</h2>
+            <h2 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5 pt-1">Tamil Desiyam & Dravidam: Our Ideals</h2>
             <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
                 Tamil Desiyam and Dravidam are the guiding principles of our party. While Tamil Desiyam fosters pride and unity among the Tamil people, Dravidam promotes social equality and justice. Together, they form the backbone of our mission, blending cultural pride with progressive values. By integrating both, we strive for a Tamil Nadu where every citizen thrives within a just and harmonious society.
             </p>
@@ -179,11 +196,11 @@
 
 
 
-            <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Our Vision</h3>
+            <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5 pt-1">Our Vision</h3>
             <p class="text-sm md:text-lg text-gray-600 mb-2 md:mb-3">
                 We envision a Tamil Nadu that is prosperous, progressive, and socially just. A state where every individual, regardless of caste, creed, or religion, has equal opportunities.
             </p>
-            <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5">Our Mission</h3>
+            <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3 md:mb-5 pt-1">Our Mission</h3>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4 mb-8">
                 <!-- Just -->
                 <div class="max-w-max w-auto relative inline-flex items-center justify-center rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105 px-4 py-2 group">
@@ -386,4 +403,3 @@
     </script>
 </body>
 </html>
-
